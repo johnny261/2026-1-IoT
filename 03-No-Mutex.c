@@ -1,3 +1,14 @@
+#include <stdio.h>
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "freertos/semphr.h"
+#include "esp_log.h"
+
+#define TAG "MUTEX_EXAMPLE"
+
+SemaphoreHandle_t xMutex;
+
+int sharedCounter = 0;
 
 void task1(void *pvParameters)
 {
