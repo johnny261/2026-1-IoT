@@ -46,7 +46,7 @@ void pwm_task(void *pvParameters)
         {
             ledc_set_duty(SPEED_MODE, LEDC_CHANNEL_0, duty);
             ledc_update_duty(SPEED_MODE, LEDC_CHANNEL_0);
-            ESP_LOGI(TAG, "Duty recibido: %d\n", duty);
+            ESP_LOGI(TAG, "Duty recibido: %d", duty);
         }
     }
 }
@@ -57,7 +57,7 @@ void generator_task(void *pvParameters)
     while(1)
     {
         xQueueSend(pwmQueue, &duty, portMAX_DELAY);
-        ESP_LOGI(TAG, "Duty enviado: %d\n", duty);
+        ESP_LOGI(TAG, "Duty enviado: %d", duty);
         duty += 50;
         if(duty > PWM_MAX)
             duty = 0;
