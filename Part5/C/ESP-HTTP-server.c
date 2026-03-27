@@ -38,13 +38,11 @@ static void wifi_event_handler(void *arg, esp_event_base_t event_base,
             ESP_LOGI(TAG, "Conectando al WiFi...");
             esp_wifi_connect();
             break;
-
         case WIFI_EVENT_STA_DISCONNECTED:
             ESP_LOGW(TAG, "Desconectado, reconectando...");
             xEventGroupClearBits(wifi_event_group, WIFI_CONNECTED_BIT);
             esp_wifi_connect();
             break;
-
         default:
             break;
         }
@@ -52,9 +50,7 @@ static void wifi_event_handler(void *arg, esp_event_base_t event_base,
     else if (event_base == IP_EVENT && event_id == IP_EVENT_STA_GOT_IP)
     {
         ip_event_got_ip_t *event = (ip_event_got_ip_t *)event_data;
-
         ESP_LOGI(TAG, "IP obtenida: " IPSTR, IP2STR(&event->ip_info.ip));
-
         xEventGroupSetBits(wifi_event_group, WIFI_CONNECTED_BIT);
     }
 }
