@@ -5,4 +5,4 @@ Perception sessions and code examples
 
 **Session 3**: [Important peripherals](Part3/IoT-P3.pdf)
 
-**Session 4**: [Some sensors](Part4/IoT-P4.pdf)
+**Session 4**: [Some peripherals](Part4/IoT-P4.pdf)
