@@ -13,8 +13,8 @@
 
 #include "esp_http_server.h"
 
-#define WIFI_SSID "IWAN"
-#define WIFI_PASS "1548Axdsl"
+#define WIFI_SSID "YOUR_SSID"
+#define WIFI_PASS "YOUR_PASS"
 
 static const char *TAG = "APP";
 
